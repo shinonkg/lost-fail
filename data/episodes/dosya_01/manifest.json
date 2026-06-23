@@ -1,5 +1,5 @@
 {
-  "id": "dosya_01",
+  "id": "dosya_01_kirik_saat",
   "title": "Kırık Saat",
   "caseNumber": "Dosya 01",
   "subtitle": "Saat 02:17'de durdu.",
@@ -9,23 +9,23 @@
   "cover": "assets/episodes/dosya_01/cover.webp",
   "story": "data/episodes/dosya_01/story.json",
   "missingPerson": {
-    "name": "Nisa Karahan",
+    "name": "Nika Stone",
     "age": 24,
-    "lastSeen": "Kuzey Terminali Belediye Arşivi",
+    "lastSeen": "Northbridge Municipal Archive",
     "criticalTime": "02:17"
   },
   "evidenceCatalog": [
-    {"id": "d_kirik_saat", "title": "Kırık kol saati", "description": "Nisa'nın dolabında bulundu. Saat 02:17'de durmuş."},
+    {"id": "d_kirik_saat", "title": "Kırık kol saati", "description": "Nika Stone'un dolabında bulundu. Saat 02:17'de durmuş."},
     {"id": "d_gizli_kapi", "title": "Eski yangın kapısı", "description": "Bodrum 17B bölümüne yakın, aktif planda görünmeyen eski geçit."},
-    {"id": "d_sahte_ifade", "title": "Sahte ifade ihtimali", "description": "Nisa, arşiv hareketlerinin kendi üzerine yıkılabileceğini önceden sezmiş."},
-    {"id": "d_otobus_bileti", "title": "Otobüs bileti", "description": "Kuzey Terminali -> Eski Depo, 02:04, koltuk 6."},
+    {"id": "d_sahte_ifade", "title": "Sahte ifade ihtimali", "description": "Nika Stone, arşiv hareketlerinin kendi üzerine yıkılabileceğini önceden sezmiş."},
+    {"id": "d_otobus_bileti", "title": "Otobüs bileti", "description": "Northbridge Terminal -> Old Freight Depot, 02:04, koltuk 6."},
     {"id": "d_kamera_kesintisi", "title": "Kamera kesintisi", "description": "Kamera 02:16'da manuel bakım moduna alınmış."},
-    {"id": "d_sari_etiket", "title": "Sarı etiketli zarf", "description": "Nisa'nın elindeki zarfta No:6 yazıyor."},
-    {"id": "d_ses_kaydi", "title": "Ses kaydı", "description": "Yaşlı bir adam, kapı, sarı işaretli evrak ve üç çizgi hakkında Nisa'yı uyarmış."},
-    {"id": "d_rauf", "title": "Rauf Yıldırım", "description": "Eski bina görevlisi. 17B, sarı işaretli evraklar ve 2019 dosyasını biliyor."},
-    {"id": "d_emre", "title": "Emre Tunç", "description": "Kamera bakım modunda görünen E.TUNC hesabının sahibi."},
+    {"id": "d_sari_etiket", "title": "Sarı etiketli zarf", "description": "Nika Stone'un elindeki zarfta No:6 yazıyor."},
+    {"id": "d_ses_kaydi", "title": "Ses kaydı", "description": "Yaşlı bir adam, kapı, sarı işaretli evrak ve üç çizgi hakkında Nika Stone'u uyarmış."},
+    {"id": "d_ralph", "title": "Ralph Grayson", "description": "Eski bina görevlisi. 17B, sarı işaretli evraklar ve 2019 dosyasını biliyor."},
+    {"id": "d_evan", "title": "Evan Cole", "description": "Kamera bakım modunda görünen E.COLE hesabının sahibi."},
     {"id": "d_sari_kutu", "title": "Sarı kutu sistemi", "description": "Orijinal imar, tapu, mülkiyet ve yıkım belgelerini sistem dışına taşıyan kayıt dışı düzen."},
-    {"id": "d_17b", "title": "Bodrum 17B", "description": "Belediye arşiv binasının kullanılmayan eski bölümü; boş kutu izi, kırık cam ve Nisa'nın notu burada bulundu."},
+    {"id": "d_17b", "title": "Bodrum 17B", "description": "Belediye arşiv binasının kullanılmayan eski bölümü; boş kutu izi, kırık cam ve Nika Stone'un notu burada bulundu."},
     {"id": "d_usb", "title": "USB bellek", "description": "Silinmiş kamera kayıtları, teslim listeleri ve sahte raporların orijinal karşılıklarını içeriyor."},
     {"id": "d_uc_cizgi", "title": "III sembolü", "description": "Belediye içi kişi, arşiv/taşıma bağlantısı ve dış çıkar grubundan oluşan üçlü ağı temsil ediyor."}
   ]
