@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _startFirstEpisode({bool continueSave = false}) async {
     final index = await _repository.loadEpisodeIndex();
-    final episode = index.episodes.firstWhere((item) => item.id == 'dosya_01');
+    final episode = index.episodes.firstWhere((item) => item.id == 'dosya_01_kirik_saat');
     if (!mounted) return;
     await Navigator.of(context).push(
       MaterialPageRoute(
@@ -71,15 +71,25 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
             ),
             const SizedBox(height: 40),
-            CaseButton(label: 'Başla', icon: Icons.play_arrow, onPressed: () => _startFirstEpisode()),
+            CaseButton(
+              label: 'Başla',
+              icon: Icons.play_arrow,
+              onPressed: () => _startFirstEpisode(),
+            ),
             const SizedBox(height: 12),
-            CaseButton(label: 'Devam Et', icon: Icons.restore, onPressed: canContinue ? () => _startFirstEpisode(continueSave: true) : null),
+            CaseButton(
+              label: 'Devam Et',
+              icon: Icons.restore,
+              onPressed: canContinue ? () => _startFirstEpisode(continueSave: true) : null,
+            ),
             const SizedBox(height: 12),
             CaseButton(
               label: 'Dosyalar',
               icon: Icons.folder_open,
               onPressed: () async {
-                await Navigator.of(context).push(MaterialPageRoute(builder: (_) => const EpisodeListScreen()));
+                await Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const EpisodeListScreen()),
+                );
                 await _loadSave();
               },
             ),
@@ -88,7 +98,26 @@ class _HomeScreenState extends State<HomeScreen> {
               label: 'Delil Arşivi',
               icon: Icons.inventory_2,
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (_) => const EvidenceArchiveScreen()));
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const EvidenceArchiveScreen()),
+                );
+              },
+            ),
+            const SizedBox(height: 12),
+            CaseButton(
+              label: 'Hakkında',
+              icon: Icons.info_outline,
+              onPressed: () {
+                showAboutDialog(
+                  context: context,
+                  applicationName: 'Kayıp Dosyalar',
+                  applicationVersion: '0.1.0',
+                  children: const [
+                    Text(
+                      'Bu oyundaki tüm kişi, kurum, şirket, olay ve yer adları kurgusaldır. Gerçek kişi, kurum veya olaylarla benzerlikler tesadüfidir.',
+                    ),
+                  ],
+                );
               },
             ),
           ],
