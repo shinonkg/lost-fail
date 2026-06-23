@@ -22,4 +22,6 @@ flutter:
     - data/episode_index.json
     - data/episodes/dosya_01/manifest.json
     - data/episodes/dosya_01/story.json
+    - data/episodes/dosya_02_ikinci_kutu/manifest.json
+    - data/episodes/dosya_02_ikinci_kutu/story.json
     - assets/episodes/dosya_01/cover.webp
