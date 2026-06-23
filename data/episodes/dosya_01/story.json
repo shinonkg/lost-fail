@@ -1,0 +1,95 @@
+{
+  "episodeId": "dosya_01",
+  "startNode": "intro",
+  "fallbackNode": "fallback_clock",
+  "nodes": [
+    {
+      "id": "intro",
+      "type": "story",
+      "title": "Dosya 01 Açıldı",
+      "text": "Kayıp kişi: Nisa Karahan, 24. Son görülme: Kuzey Terminali Belediye Arşivi. Kritik saat: 02:17.\n\nNisa gece vardiyasında çalışan sakin ve dikkatli bir arşiv memurudur. Bir gece çocukluk arkadaşı Lara Demir'e üç mesaj gönderir:\n\n02:11 - Saat 02:17 olunca kapı kendiliğinden açıldı.\n02:12 - Ben odaya girmedim dersem inanma.\n02:13 - Eğer sabaha kadar dönmezsem, camın altına bak.\n\nLara, Nisa'nın en güvendiği kişidir. Nisa korktuğunda önce Lara'yı arar; o gece polisi değil Lara'yı yazması bu yüzden anlamlıdır. Sabah olduğunda Nisa kayıptır. Dolabında kırık bir kol saati bulunur. Saat 02:17'de durmuştur.",
+      "image": "assets/episodes/dosya_01/cover.webp",
+      "effects": {"d_kirik_saat": true},
+      "choices": [
+        {"label": "Son mesajları detaylı incele.", "next": "messages"},
+        {"label": "Güvenlik kamerası görüntüsüne bak.", "next": "camera"},
+        {"label": "Son mesajı alan Lara ile konuş.", "next": "lara"}
+      ]
+    },
+    {
+      "id": "messages",
+      "type": "choice",
+      "title": "Son Mesajlar",
+      "text": "Mesajlar aceleyle yazılmış gibi değildir. Nisa normalde kısa ve dağınık yazar, ama bu üç mesaj sanki bilerek bırakılmış ipuçlarıdır.",
+      "choices": [
+        {"label": "\"Kapı kendiliğinden açıldı\" kısmına odaklan.", "next": "door_clue", "effects": {"d_gizli_kapi": true, "delil_puani": 10}},
+        {"label": "\"Ben odaya girmedim dersem inanma\" kısmını araştır.", "next": "fake_statement", "effects": {"d_sahte_ifade": true, "delil_puani": 8}},
+        {"label": "\"Camın altına bak\" ifadesini çöz.", "next": "glass_booth", "effects": {"d_otobus_bileti": true, "delil_puani": 12}}
+      ]
+    },
+    {"id": "door_clue", "type": "story", "title": "Sistemde Olmayan Kapı", "text": "Arşiv planlarında 02:17'de otomatik açılan bir kapı yoktur. Ancak bodrum katında sisteme işlenmemiş eski bir yangın kapısı görünür. Kapı hâlâ kullanılabilir durumdadır.", "choices": [{"label": "İlk bulguları toparla.", "next": "first_findings"}]},
+    {"id": "fake_statement", "type": "story", "title": "Sahte İfade", "text": "Nisa'nın cümlesi bir savunma değil, uyarıdır. Kayıptan sonra biri onun adına konuşabilir ya da onu oradaymış gibi gösterebilir.", "choices": [{"label": "İlk bulguları toparla.", "next": "first_findings"}]},
+    {"id": "glass_booth", "type": "story", "title": "Camın Altı", "text": "Arşiv binasında büyük cam yoktur. Kuzey Terminali durağındaki eski cam bekleme kabininin altında bant izi bulunur. Bant izinin arkasında bir bilet vardır: Kuzey Terminali -> Eski Depo, 02:04, koltuk 6.", "choices": [{"label": "İlk bulguları toparla.", "next": "first_findings"}]},
+    {
+      "id": "camera",
+      "type": "choice",
+      "title": "Kamera Kaydı",
+      "text": "Nisa 02:11'de koridorda görünür. Elinde siyah bir zarf vardır; zarfın üzerinde küçük sarı bir etiket seçilir. 02:16'da kamera kesilir. 02:18'de görüntü geri geldiğinde Nisa yoktur.",
+      "choices": [
+        {"label": "Görüntüyü yakınlaştır.", "next": "shadow", "effects": {"hata_puani": 8}},
+        {"label": "Kamera kesintisini araştır.", "next": "camera_cut", "effects": {"d_kamera_kesintisi": true, "d_emre": true, "delil_puani": 12}},
+        {"label": "Nisa'nın elindeki zarfı incele.", "next": "yellow_label", "effects": {"d_sari_etiket": true, "delil_puani": 10}}
+      ]
+    },
+    {"id": "shadow", "type": "story", "title": "Belirsiz Gölge", "text": "Koridor sonunda bir gölgeye benzeyen koyu bir leke görünür. Ama açı kötü, ışık eksik ve görüntü kesin değildir. Yanlış yorum dosyayı kirletebilir.", "choices": [{"label": "İlk bulguları toparla.", "next": "first_findings"}]},
+    {"id": "camera_cut", "type": "story", "title": "E.TUNC", "text": "Kesinti doğal arıza değildir. Kamera manuel bakım moduna alınmıştır. Kayıtlarda kullanıcı adı görünür: E.TUNC. Personel sistemi bunun arşivde teknik erişimi olan Emre Tunç'a ait olduğunu gösterir.", "choices": [{"label": "İlk bulguları toparla.", "next": "first_findings"}]},
+    {"id": "yellow_label", "type": "story", "title": "Sarı Etiket", "text": "Zarfın üzerindeki sarı etikette yalnızca No:6 okunur. Bu aşamada bunun ne olduğu bilinmez; sadece Nisa'nın kaybolmadan hemen önce bu zarfı taşıdığı kesindir.", "choices": [{"label": "İlk bulguları toparla.", "next": "first_findings"}]},
+    {
+      "id": "lara",
+      "type": "choice",
+      "title": "Lara Demir",
+      "text": "Lara paniktedir ama yalnızca üzgün değildir; suçluluk da hissediyor gibidir. \"Nisa beni aramadı. Sadece mesaj attı. Ben mesajları görünce defalarca aradım ama telefonu kapalıydı.\"",
+      "choices": [
+        {"label": "Lara'ya sert çık.", "next": "lara_hard", "effects": {"lara_guven": -10, "hata_puani": 6}},
+        {"label": "Sakin konuşup güven ver.", "next": "voice_record", "effects": {"lara_guven": 10, "d_ses_kaydi": true, "delil_puani": 12}},
+        {"label": "Nisa'nın son günlerde kimlerle görüştüğünü sor.", "next": "lara_contacts", "effects": {"eski_gorevli_ipucu": true, "emre_isim_ipucu": true, "delil_puani": 8}}
+      ]
+    },
+    {"id": "lara_hard", "type": "story", "title": "Kapanan Tanık", "text": "Lara savunmaya geçer. Konuşmayı kısa keser ve telefonunu kapatır. Nisa'yı tanıyan en yakın kişinin güveni zedelenmiştir.", "choices": [{"label": "İlk bulguları toparla.", "next": "first_findings"}]},
+    {"id": "voice_record", "type": "story", "title": "Ses Kaydı", "text": "Lara, Nisa'nın birkaç gün önce bir ses kaydı gönderdiğini itiraf eder. Kayıtta yaşlı bir adam konuşur:\n\n\"Nisa kızım, o kapı her gece açılmaz. Sadece biri içeriden kilidi boşa alırsa açılır. Sarı işaretli evrakı bulursan tek başına alma. Üzerindeki işarete bak. Üç çizgi varsa...\"\n\nKayıt burada kesilir. Bu noktada adamın adı bilinmez.", "choices": [{"label": "İlk bulguları toparla.", "next": "first_findings"}]},
+    {"id": "lara_contacts", "type": "story", "title": "Son Görüşmeler", "text": "Lara, Nisa'nın arşivden eski bir bina görevlisinin adını araştırdığını söyler. Ayrıca iş yerinde Emre adında biriyle tartıştığını duymuştur. İsimler vardır, ama anlamları henüz net değildir.", "choices": [{"label": "İlk bulguları toparla.", "next": "first_findings"}]},
+    {
+      "id": "first_findings",
+      "type": "choice",
+      "title": "İlk Bulgular",
+      "text": "Dosya artık tek bir kayıp vakası gibi durmaz. Elindeki ipuçları hangi kapının açılacağını belirleyecek.",
+      "choices": [
+        {"label": "Ses kaydındaki yaşlı adamın kim olduğunu araştır.", "next": "rauf_intro", "requires": {"d_ses_kaydi": true}, "effects": {"d_rauf": true, "delil_puani": 10}},
+        {"label": "Eski bina görevlisi ipucunu personel kayıtlarında ara.", "next": "rauf_intro", "requires": {"eski_gorevli_ipucu": true}, "effects": {"d_rauf": true, "delil_puani": 8}},
+        {"label": "E.TUNC kullanıcı adını araştır.", "next": "emre_intro", "requires": {"d_kamera_kesintisi": true}, "effects": {"d_emre": true, "delil_puani": 8}},
+        {"label": "Sarı etiketli zarfın kaynağını araştır.", "next": "yellow_box_intro", "requires": {"d_sari_etiket": true}, "effects": {"d_sari_kutu": true, "delil_puani": 12}},
+        {"label": "Eski Depo hattını araştır.", "next": "old_depot", "requires": {"d_otobus_bileti": true}, "effects": {"depo_baglanti": true, "delil_puani": 10}}
+      ]
+    },
+    {"id": "fallback_clock", "type": "story", "title": "Dosyayı Yeniden Değerlendir", "text": "Kırık saat yeniden incelenir. Camındaki çatlak dışarıdan değil, içeriden gelen ani basınca benzer. Saatin durduğu 02:17 ile kamera kesintisi arasındaki iki dakikalık boşluk tekrar önem kazanır.", "effects": {"d_kamera_kesintisi": true, "delil_puani": 6}, "choices": [{"label": "Kamera kesintisini yeniden araştır.", "next": "camera_cut"}]},
+    {"id": "rauf_intro", "type": "story", "title": "Rauf Yıldırım", "text": "Personel kayıtları sesin Rauf Yıldırım'a ait olduğunu gösterir. Rauf yıllar önce binada görevliydi. Eski kapıları, bodrum geçitlerini ve kayıt dışı odaları bilen az kişiden biridir. Artık Rauf Usta'yı bulmak anlamlıdır.", "choices": [{"label": "Rauf Usta'yı bul.", "next": "rauf_meeting"}]},
+    {"id": "rauf_meeting", "type": "story", "title": "Rauf'un Bildikleri", "text": "Rauf başta konuşmaz. Sonra Nisa'nın ondan bina planlarını istediğini söyler. 17B rafını bilir. Sarı işaretli evrakların resmi kayıt kutusu olmadığını, bazı dosyaların yıllarca sisteme girmeden böyle taşındığını anlatır. Üç çizgi sembolünü 2019 yılında başka bir kayıp dosyasında gördüğünü ekler.", "effects": {"d_sari_kutu": true, "d_uc_cizgi": true, "dosya_2019_acildi": true, "delil_puani": 18}, "choices": [{"label": "Bodrum 17B'ye in.", "next": "basement_17b"}]},
+    {"id": "emre_intro", "type": "choice", "title": "Emre Tunç", "text": "Emre arşivde teknik sisteme erişimi olan çalışandır. O gece izinli görünür, ama kamera onun hesabıyla kapatılmıştır. Görüştüğünde suçlu gibi değil, korkmuş gibi durur.", "choices": [{"label": "Emre'yi hemen suçla.", "next": "emre_accused", "effects": {"emre_suclandi": true, "hata_puani": 14}}, {"label": "Emre'ye dikkatli sorular sor.", "next": "emre_careful", "effects": {"emre_tanik": true, "delil_puani": 12}}]},
+    {"id": "emre_accused", "type": "story", "title": "Erken Suçlama", "text": "Emre kapanır. \"Ben o gece orada değildim\" der ve başka hiçbir şey söylemez. Yanlış zamanda yapılan suçlama dosyanın yönünü bozabilir.", "choices": [{"label": "Bodrum 17B bağlantısını ara.", "next": "basement_17b"}]},
+    {"id": "emre_careful", "type": "story", "title": "Korkak Tanık", "text": "Emre, şifresini Nisa'nın da bildiğini söyler. Sarı etiketli zarfı Nisa'nın aradığını kabul eder. Terminal arkasındaki peronda 17B yazılı küçük bir anahtar aldığını da itiraf eder.", "effects": {"d_17b": true, "delil_puani": 10}, "choices": [{"label": "Bodrum 17B'ye in.", "next": "basement_17b"}]},
+    {"id": "yellow_box_intro", "type": "story", "title": "Sarı Kutu", "text": "Arşiv kayıtlarında bir satır bulunur: 17B / No:6 / Teslim edilmedi. Sarı etiketli zarfların resmi olmayan bir evrak taşıma sistemine ait olduğu anlaşılır. Bu artık bir zarf değil, bir kutu sistemidir.", "effects": {"d_sari_kutu": true, "delil_puani": 10}, "choices": [{"label": "Bodrum 17B kaydını takip et.", "next": "basement_17b"}]},
+    {"id": "basement_17b", "type": "choice", "title": "Bodrum 17B", "text": "Eski raf numaralarının arasında 17B bulunur. Rafın altında yakın zamanda boşaltılmış bir kutu alanı vardır. Yerde kırık cam parçaları durur; Nisa'nın saatinden kopmuş olabilir.", "effects": {"d_17b": true, "delil_puani": 10}, "choices": [{"label": "Raf arkasını kontrol et.", "next": "nisa_note", "effects": {"nisa_notu": true, "delil_puani": 12}}, {"label": "Kırık cam parçalarını incele.", "next": "glass_pieces", "effects": {"delil_puani": 6}}, {"label": "Eski Depo bağlantısını takip et.", "next": "old_depot", "requires": {"d_sari_kutu": true}, "effects": {"depo_baglanti": true}}]},
+    {"id": "nisa_note", "type": "story", "title": "Nisa'nın Notu", "text": "Raf arkasında Nisa'nın notu bulunur:\n\n\"Beni arıyorlarsa yanlış yerdeler. Ben kutuyu aldım. Ama içindekini görmeden kimseye güvenme.\"\n\nNisa pasif bir kurban değildir; olayın peşinden bilinçli şekilde gitmiştir.", "effects": {"depo_baglanti": true, "delil_puani": 10}, "choices": [{"label": "Eski Depo'ya git.", "next": "old_depot"}]},
+    {"id": "glass_pieces", "type": "story", "title": "Saat Camı", "text": "Cam parçaları kırık saatle uyumludur. Nisa saati bilerek kırmış olabilir; 02:17 dosyanın yalnızca saati değil, yön tabelasıdır.", "choices": [{"label": "Eski Depo bağlantısını takip et.", "next": "old_depot"}]},
+    {"id": "old_depot", "type": "choice", "title": "Eski Depo", "text": "Eski Depo'nun kapı zinciri yeni kesilmiştir. Yerde sarı kutunun kapağı vardır. Etikette No:6 / 17B / Teslim edilmedi yazar. İçeride eski dosyalar, fotoğraflar ve bir USB bellek bulunur.", "effects": {"d_sari_kutu": true, "delil_puani": 10}, "choices": [{"label": "Fotoğrafları incele.", "next": "photos", "effects": {"fotograflar_incelendi": true, "d_uc_cizgi": true, "delil_puani": 14}}, {"label": "USB belleği al.", "next": "usb", "effects": {"d_usb": true, "usb_alindi": true, "delil_puani": 14}}, {"label": "Sesin geldiği odaya git.", "next": "find_nisa", "effects": {"nisa_bulundu": true}}]},
+    {"id": "photos", "type": "story", "title": "Tekrar Eden Sembol", "text": "Fotoğraflarda 2019, 2021, 2024 ve 2026 tarihleri görülür. Aynı üç çizgi sembolü her dosyada tekrar eder. Bu tek olay değildir.", "choices": [{"label": "Sesin geldiği odaya git.", "next": "find_nisa"}]},
+    {"id": "usb", "type": "story", "title": "USB Bellek", "text": "USB bellek küçük ve çizilmiştir, ama çalışır durumdadır. İçinde silinmiş kamera kayıtları ve sahte teslim listelerine ait izler olabilir.", "choices": [{"label": "Sesin geldiği odaya git.", "next": "find_nisa"}]},
+    {"id": "find_nisa", "type": "story", "title": "Nisa Bulundu", "text": "Nisa hayattadır. Yorgundur ama kaçırılmış gibi görünmez. Elinde küçük bir tornavida vardır, bileğinde saati yoktur.\n\nİlk cümlesi şudur: \"Lara iyi mi?\"\n\nSonra gerçeği anlatır: \"Ben kaçırılmadım. Ama yakalanırsam kayıp gibi göstereceklerdi.\"", "effects": {"nisa_bulundu": true, "delil_puani": 10}, "choices": [{"label": "Depoya gelen adımları dinle.", "next": "emre_confrontation"}]},
+    {"id": "emre_confrontation", "type": "choice", "title": "Emre ile Yüzleşme", "text": "Depoda kapı açılır ve Emre gelir. Elinde 17B anahtarı vardır.\n\nEmre: \"Ben onu korumaya çalıştım.\"\nNisa: \"Hayır. Sen sustun. Bu aynı şey değil.\"", "choices": [{"label": "Emre'yi hemen suçla.", "next": "ending_bad", "effects": {"emre_suclandi": true, "hata_puani": 12}}, {"label": "Emre'ye ne sakladığını sor.", "next": "emre_truth", "effects": {"emre_tanik": true, "delil_puani": 10}}, {"label": "Nisa'yı alıp kaçmaya çalış.", "next": "ending_normal", "effects": {"hata_puani": 8}}]},
+    {"id": "emre_truth", "type": "choice", "title": "En Zayıf Halka", "text": "Emre titreyerek konuşur: \"Ben sadece şifre verdim. Önce ne taşıdıklarını bilmiyordum. Nisa kutuyu bulunca bana geldi. Yardım etmek istedim ama korktum. Onları koruyan kişi ben değilim. Ben sadece en zayıf halkaydım.\"", "choices": [{"label": "USB ve üç çizgi bağlantısını çöz.", "next": "ending_secret", "requires": {"usb_alindi": true, "d_uc_cizgi": true, "dosya_2019_acildi": true, "fotograflar_incelendi": true}}, {"label": "USB içeriğini resmi rapora ekle.", "next": "ending_true", "requires": {"usb_alindi": true}}, {"label": "Önce Nisa'yı güvenli yere çıkar.", "next": "ending_normal"}]},
+    {"id": "ending_bad", "type": "ending", "title": "Kötü Final: Yanlış Suçlama", "text": "Emre ana suçlu olarak bildirilir. Dosya hızlıca kapanır. Nisa kurtulur ama gerçek ağ ortaya çıkmaz. Birkaç gün sonra arşivde yangın çıkar.\n\nBilinmeyen numaradan mesaj gelir: \"Yanlış kişiyi seçtin.\"", "endingId": "bad_wrong_accusation"},
+    {"id": "ending_normal", "type": "ending", "title": "Normal Final: Nisa Kurtarıldı", "text": "Nisa güvenli yere çıkarılır. Olay resmi raporda kurum içi veri saklama ve tehdit olarak geçer. Ancak sarı kutuların gerçek sahibi bulunamaz.", "endingId": "normal_nisa_saved"},
+    {"id": "ending_true", "type": "ending", "title": "Doğru Final: Sarı Kutu Açıldı", "text": "USB açılır. Silinmiş kamera kayıtları, teslimat listeleri ve sahte raporlar ortaya çıkar. Nisa ifade verir:\n\n\"Ben kaybolmadım. Beni kayıp göstermek istediler.\"\n\nKırık saatin arka kapağında küçük bir kazıma görülür: III", "endingId": "true_yellow_box_opened"},
+    {"id": "ending_secret", "type": "ending", "title": "Gizli Final: Üç Çizgi", "text": "Dosya resmi sisteme hemen kapatılmaz. USB kopyalanır. 2019 dosyası yeniden açılır. Nisa, Lara, Rauf ve Emre'nin verdiği bilgiler aynı sembole çıkar.\n\nBu bir kişi değildir. Bu bir ağdır.\n\nBilinmeyen numaradan mesaj gelir:\n\"Birinci kutuyu açtın. İkincisi sende değil. Saat yine 02:17'de duracak.\"\n\nDosya 02 kilidi açılır: İkinci Kutu. Teslim bilgisinde tek isim görünür: Lara Demir.", "endingId": "secret_three_lines", "effects": {"dosya_02_unlocked": true}}
+  ]
+}
