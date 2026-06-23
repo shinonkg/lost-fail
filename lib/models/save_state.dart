@@ -9,7 +9,7 @@ class SaveState {
   })  : playerVariables = playerVariables ?? <String, dynamic>{},
         foundEvidence = foundEvidence ?? <String>{},
         completedEndings = completedEndings ?? <String>{},
-        downloadedEpisodes = downloadedEpisodes ?? {'dosya_01'};
+        downloadedEpisodes = downloadedEpisodes ?? {'dosya_01_kirik_saat'};
 
   factory SaveState.fromJson(Map<String, dynamic> json) {
     return SaveState(
@@ -22,7 +22,7 @@ class SaveState {
       completedEndings:
           Set<String>.from(json['completed_endings'] as List<dynamic>? ?? []),
       downloadedEpisodes:
-          Set<String>.from(json['downloaded_episodes'] as List<dynamic>? ?? ['dosya_01']),
+          Set<String>.from(json['downloaded_episodes'] as List<dynamic>? ?? ['dosya_01_kirik_saat']),
     );
   }
 
