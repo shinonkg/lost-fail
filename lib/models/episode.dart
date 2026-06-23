@@ -21,6 +21,7 @@ class EpisodeSummary {
     required this.local,
     this.manifest,
     this.remoteManifestUrl,
+    this.requiresCompletedEpisode,
   });
 
   factory EpisodeSummary.fromJson(Map<String, dynamic> json) {
@@ -33,6 +34,7 @@ class EpisodeSummary {
       local: json['local'] as bool? ?? false,
       manifest: json['manifest'] as String?,
       remoteManifestUrl: json['remoteManifestUrl'] as String?,
+      requiresCompletedEpisode: json['requiresCompletedEpisode'] as String?,
     );
   }
 
@@ -44,6 +46,7 @@ class EpisodeSummary {
   final bool local;
   final String? manifest;
   final String? remoteManifestUrl;
+  final String? requiresCompletedEpisode;
 
   bool get isPlayable => status == 'downloaded' && manifest != null;
 }
@@ -58,6 +61,7 @@ class EpisodeManifest {
     required this.story,
     required this.missingPerson,
     required this.evidenceCatalog,
+    required this.subjectLabel,
   });
 
   factory EpisodeManifest.fromJson(Map<String, dynamic> json) {
@@ -68,6 +72,7 @@ class EpisodeManifest {
       subtitle: json['subtitle'] as String? ?? '',
       cover: json['cover'] as String?,
       story: json['story'] as String,
+      subjectLabel: json['subjectLabel'] as String? ?? 'Kayıp kişi',
       missingPerson:
           MissingPerson.fromJson(json['missingPerson'] as Map<String, dynamic>),
       evidenceCatalog: (json['evidenceCatalog'] as List<dynamic>? ?? [])
@@ -82,6 +87,7 @@ class EpisodeManifest {
   final String subtitle;
   final String? cover;
   final String story;
+  final String subjectLabel;
   final MissingPerson missingPerson;
   final List<EvidenceDefinition> evidenceCatalog;
 }
