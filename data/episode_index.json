@@ -11,13 +11,14 @@
       "manifest": "data/episodes/dosya_01/manifest.json"
     },
     {
-      "id": "dosya_02",
+      "id": "dosya_02_ikinci_kutu",
       "title": "İkinci Kutu",
       "caseNumber": "Dosya 02",
-      "status": "coming_soon",
+      "status": "downloaded",
       "free": false,
-      "local": false,
-      "remoteManifestUrl": null
+      "local": true,
+      "manifest": "data/episodes/dosya_02_ikinci_kutu/manifest.json",
+      "requiresCompletedEpisode": "dosya_01_kirik_saat"
     }
   ]
 }
