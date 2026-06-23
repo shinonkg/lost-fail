@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "episodes": [
+    {
+      "id": "dosya_01",
+      "title": "Kırık Saat",
+      "caseNumber": "Dosya 01",
+      "status": "downloaded",
+      "free": true,
+      "local": true,
+      "manifest": "data/episodes/dosya_01/manifest.json"
+    },
+    {
+      "id": "dosya_02",
+      "title": "İkinci Kutu",
+      "caseNumber": "Dosya 02",
+      "status": "coming_soon",
+      "free": false,
+      "local": false,
+      "remoteManifestUrl": null
+    }
+  ]
+}
