@@ -1,0 +1,30 @@
+{
+  "id": "dosya_02_ikinci_kutu",
+  "title": "İkinci Kutu",
+  "caseNumber": "Dosya 02",
+  "subtitle": "İkinci kutu 02:17'de teslim edildi.",
+  "version": 1,
+  "free": false,
+  "downloaded": true,
+  "cover": null,
+  "story": "data/episodes/dosya_02_ikinci_kutu/story.json",
+  "subjectLabel": "Kurban",
+  "missingPerson": {
+    "name": "Edwin Vale",
+    "age": 47,
+    "lastSeen": "Old Freight Depot",
+    "criticalTime": "02:17"
+  },
+  "evidenceCatalog": [
+    {"id": "d1_teslim_fisi", "title": "Yırtık Teslim Fişi", "description": "İkinci kutuya ait teslim fişi. Üzerinde Lena Cross adı vardır."},
+    {"id": "d2_kamera_kablosu", "title": "Kesilmiş Kamera Kablosu", "description": "Edwin Vale'in öldüğü depoda kameraların bilinçli kapatıldığını gösterir."},
+    {"id": "d3_kilit_parcasi", "title": "Metal Kilit Parçası", "description": "Sarı kutuya ait kilit parçası. Üzerinde III sembolü vardır."},
+    {"id": "d4_gonderilmemis_mesaj", "title": "Gönderilmemiş Mesaj", "description": "Edwin Vale'in telefonunda Lena Cross'a yazılmış ama gönderilmemiş mesaj."},
+    {"id": "d5_eski_belge", "title": "Eski İmar Belgesi", "description": "Lena Cross'un sakladığı belge. Aynı arsanın eski ve yeni kaydını gösterir."},
+    {"id": "d6_soguk_oda_anahtari", "title": "Soğuk Oda Anahtarı", "description": "Old Freight Depot içinde gizli bölümün anahtarı."},
+    {"id": "d7_ikinci_kutu", "title": "İkinci Sarı Kutu", "description": "No:2 / 17B / Teslim edildi / Alıcı: Lena Cross etiketi vardır."},
+    {"id": "d8_ses_kaydi", "title": "Bozuk Ses Kaydı", "description": "Edwin Vale'in telefonunda bulunan cinayet öncesi kayıt."},
+    {"id": "d9_ms_formu", "title": "M.S. Onay Formu", "description": "Marcus Veyne'e bağlanan belediye onay formu."},
+    {"id": "d10_tuzak_kaydi", "title": "Tuzak Kamera Kaydı", "description": "Marcus Veyne'in 02:17'de depoya geri döndüğünü gösteren kayıt."}
+  ]
+}
