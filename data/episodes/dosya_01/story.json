@@ -1,5 +1,5 @@
 {
-  "episodeId": "dosya_01",
+  "episodeId": "dosya_01_kirik_saat",
   "startNode": "intro",
   "fallbackNode": "fallback_clock",
   "nodes": [
@@ -7,89 +7,666 @@
       "id": "intro",
       "type": "story",
       "title": "Dosya 01 Açıldı",
-      "text": "Kayıp kişi: Nisa Karahan, 24. Son görülme: Kuzey Terminali Belediye Arşivi. Kritik saat: 02:17.\n\nNisa gece vardiyasında çalışan dikkatli bir arşiv memurudur. Son haftalarda eski imar ve mülkiyet kayıtlarında tuhaf bir tutarsızlık fark etmiştir: aynı arsaya ait eski kayıt kamu alanı / yeşil alan derken, yeni sistem aynı yeri özel inşaat alanı / onaylı proje gibi göstermektedir.\n\nNisa bunun tek dosya olmadığını anlar. Bazı eski imar, tapu, yıkım ve mülkiyet belgeleri resmi sistemden çıkarılmış; yerlerine değiştirilmiş kopyalar konmuştur.\n\nKaybolmadan önce çocukluk arkadaşı Lara Demir'e üç mesaj gönderir:\n\n02:11 - Saat 02:17 olunca kapı kendiliğinden açıldı.\n02:12 - Ben odaya girmedim dersem inanma.\n02:13 - Eğer sabaha kadar dönmezsem, camın altına bak.\n\nLara, Nisa'nın en güvendiği kişidir. Nisa korktuğunda veya başı belaya girdiğinde önce Lara'yı arar. Bu yüzden o gece polisi değil Lara'yı yazması anlamlıdır.\n\nSabah olduğunda Nisa kayıptır. Dolabında kırık bir kol saati bulunur. Saat tam 02:17'de durmuştur.",
+      "text": "Kayıp kişi: Nika Stone, 24. Son görülme: Northbridge Municipal Archive. Kritik saat: 02:17.\n\nNika Stone gece vardiyasında çalışan dikkatli bir arşiv memurudur. Son haftalarda eski imar ve mülkiyet kayıtlarında tuhaf bir tutarsızlık fark etmiştir: aynı arsaya ait eski kayıt kamu alanı / yeşil alan derken, yeni sistem aynı yeri özel inşaat alanı / onaylı proje gibi göstermektedir.\n\nNika Stone bunun tek dosya olmadığını anlar. Bazı eski imar, tapu, yıkım ve mülkiyet belgeleri resmi sistemden çıkarılmış; yerlerine değiştirilmiş kopyalar konmuştur.\n\nKaybolmadan önce çocukluk arkadaşı Lena Cross'a üç mesaj gönderir:\n\n02:11 - Saat 02:17 olunca kapı kendiliğinden açıldı.\n02:12 - Ben odaya girmedim dersem inanma.\n02:13 - Eğer sabaha kadar dönmezsem, camın altına bak.\n\nLena Cross, Nika Stone'un en güvendiği kişidir. Nika Stone korktuğunda veya başı belaya girdiğinde önce Lena Cross'u arar. Bu yüzden o gece polisi değil Lena Cross'u yazması anlamlıdır.\n\nSabah olduğunda Nika Stone kayıptır. Dolabında kırık bir kol saati bulunur. Saat tam 02:17'de durmuştur.",
       "image": "assets/episodes/dosya_01/cover.webp",
-      "effects": {"d_kirik_saat": true, "imar_yolsuzlugu_ipucu": true},
+      "effects": {
+        "d_kirik_saat": true,
+        "imar_yolsuzlugu_ipucu": true
+      },
       "choices": [
-        {"label": "Son mesajları detaylı incele.", "next": "messages"},
-        {"label": "Güvenlik kamerası görüntüsüne bak.", "next": "camera"},
-        {"label": "Son mesajı alan Lara ile konuş.", "next": "lara"}
+        {
+          "label": "Son mesajları detaylı incele.",
+          "next": "messages"
+        },
+        {
+          "label": "Güvenlik kamerası görüntüsüne bak.",
+          "next": "camera"
+        },
+        {
+          "label": "Son mesajı alan Lena Cross ile konuş.",
+          "next": "lena"
+        }
       ]
     },
     {
       "id": "messages",
       "type": "choice",
       "title": "Son Mesajlar",
-      "text": "Mesajlar panikle yazılmış gibi değildir. Nisa kısa ve dağınık yazan biridir, ama bu üç cümle bilinçli bırakılmış ipuçları gibi durur. Her cümle başka bir yere işaret eder.",
+      "text": "Mesajlar panikle yazılmış gibi değildir. Nika Stone kısa ve dağınık yazan biridir, ama bu üç cümle bilinçli bırakılmış ipuçları gibi durur. Her cümle başka bir yere işaret eder.",
       "choices": [
-        {"label": "\"Kapı kendiliğinden açıldı\" kısmına odaklan.", "next": "door_clue", "effects": {"d_gizli_kapi": true, "delil_puani": 10}},
-        {"label": "\"Ben odaya girmedim dersem inanma\" kısmını araştır.", "next": "fake_statement", "effects": {"d_sahte_ifade": true, "delil_puani": 8}},
-        {"label": "\"Camın altına bak\" ifadesini çöz.", "next": "glass_booth", "effects": {"d_otobus_bileti": true, "depo_baglanti": true, "delil_puani": 12}}
+        {
+          "label": "\"Kapı kendiliğinden açıldı\" kısmına odaklan.",
+          "next": "door_clue",
+          "effects": {
+            "d_gizli_kapi": true,
+            "delil_puani": 10
+          }
+        },
+        {
+          "label": "\"Ben odaya girmedim dersem inanma\" kısmını araştır.",
+          "next": "fake_statement",
+          "effects": {
+            "d_sahte_ifade": true,
+            "delil_puani": 8
+          }
+        },
+        {
+          "label": "\"Camın altına bak\" ifadesini çöz.",
+          "next": "glass_booth",
+          "effects": {
+            "d_otobus_bileti": true,
+            "depo_baglanti": true,
+            "delil_puani": 12
+          }
+        }
       ]
     },
-    {"id": "door_clue", "type": "story", "title": "Sistemde Olmayan Kapı", "text": "Arşiv planlarında 02:17'de otomatik açılan bir kapı yoktur. Ancak bodrum katında, resmi planda aktif görünmeyen eski bir yangın kapısı bulunur. Bu kapı normal personelin kullanmadığı 17B bölümüne yakın durur.", "choices": [{"label": "İlk bulguları toparla.", "next": "first_findings"}]},
-    {"id": "fake_statement", "type": "story", "title": "Sahte İfade", "text": "Nisa'nın cümlesi bir savunma değil, uyarıdır. Kayıptan sonra biri onun adına konuşabilir, onu belirli bir odaya girmiş gibi gösterebilir ya da dosya hareketlerini Nisa'nın üzerine yıkabilir.", "choices": [{"label": "İlk bulguları toparla.", "next": "first_findings"}]},
-    {"id": "glass_booth", "type": "story", "title": "Camın Altı", "text": "Arşiv binasında büyük cam yoktur. Kuzey Terminali durağındaki eski cam bekleme kabininin altında bant izi bulunur. Bant izinin arkasında bir bilet vardır: Kuzey Terminali -> Eski Depo, 02:04, koltuk 6.\n\nEski Depo şehir dışındaki terk edilmiş bakım ve depolama alanıdır. Bu bilgi henüz yalnızca bir rota ipucudur.", "choices": [{"label": "İlk bulguları toparla.", "next": "first_findings"}]},
+    {
+      "id": "door_clue",
+      "type": "story",
+      "title": "Sistemde Olmayan Kapı",
+      "text": "Arşiv planlarında 02:17'de otomatik açılan bir kapı yoktur. Ancak bodrum katında, resmi planda aktif görünmeyen eski bir yangın kapısı bulunur. Bu kapı normal personelin kullanmadığı 17B bölümüne yakın durur.",
+      "choices": [
+        {
+          "label": "İlk bulguları toparla.",
+          "next": "first_findings"
+        }
+      ]
+    },
+    {
+      "id": "fake_statement",
+      "type": "story",
+      "title": "Sahte İfade",
+      "text": "Nika Stone'un cümlesi bir savunma değil, uyarıdır. Kayıptan sonra biri onun adına konuşabilir, onu belirli bir odaya girmiş gibi gösterebilir ya da dosya hareketlerini Nika Stone'un üzerine yıkabilir.",
+      "choices": [
+        {
+          "label": "İlk bulguları toparla.",
+          "next": "first_findings"
+        }
+      ]
+    },
+    {
+      "id": "glass_booth",
+      "type": "story",
+      "title": "Camın Altı",
+      "text": "Arşiv binasında büyük cam yoktur. Northbridge Terminal durağındaki eski cam bekleme kabininin altında bant izi bulunur. Bant izinin arkasında bir bilet vardır: Northbridge Terminal -> Old Freight Depot, 02:04, koltuk 6.\n\nOld Freight Depot şehir dışındaki terk edilmiş bakım ve depolama alanıdır. Bu bilgi henüz yalnızca bir rota ipucudur.",
+      "choices": [
+        {
+          "label": "İlk bulguları toparla.",
+          "next": "first_findings"
+        }
+      ]
+    },
     {
       "id": "camera",
       "type": "choice",
       "title": "Kamera Kaydı",
-      "text": "Nisa 02:11'de koridorda görünür. Elinde siyah bir zarf vardır. Zarfın üzerinde küçük sarı bir etiket seçilir. 02:16'da kamera kesilir. 02:18'de görüntü geri geldiğinde Nisa artık koridorda yoktur.",
+      "text": "Nika Stone 02:11'de koridorda görünür. Elinde siyah bir zarf vardır. Zarfın üzerinde küçük sarı bir etiket seçilir. 02:16'da kamera kesilir. 02:18'de görüntü geri geldiğinde Nika Stone artık koridorda yoktur.",
       "choices": [
-        {"label": "Görüntüyü yakınlaştır.", "next": "shadow", "effects": {"hata_puani": 8}},
-        {"label": "Kamera kesintisini araştır.", "next": "camera_cut", "effects": {"d_kamera_kesintisi": true, "d_emre": true, "delil_puani": 12}},
-        {"label": "Nisa'nın elindeki zarfı incele.", "next": "yellow_label", "effects": {"d_sari_etiket": true, "delil_puani": 10}}
+        {
+          "label": "Görüntüyü yakınlaştır.",
+          "next": "shadow",
+          "effects": {
+            "hata_puani": 8
+          }
+        },
+        {
+          "label": "Kamera kesintisini araştır.",
+          "next": "camera_cut",
+          "effects": {
+            "d_kamera_kesintisi": true,
+            "d_evan": true,
+            "delil_puani": 12
+          }
+        },
+        {
+          "label": "Nika Stone'un elindeki zarfı incele.",
+          "next": "yellow_label",
+          "effects": {
+            "d_sari_etiket": true,
+            "delil_puani": 10
+          }
+        }
       ]
     },
-    {"id": "shadow", "type": "story", "title": "Belirsiz Gölge", "text": "Koridor sonunda gölgeye benzeyen koyu bir leke görünür. Ancak açı kötü, ışık eksik ve görüntü kesin değildir. Tek başına bu kayıt birini suçlamaya yetmez.", "choices": [{"label": "İlk bulguları toparla.", "next": "first_findings"}]},
-    {"id": "camera_cut", "type": "story", "title": "E.TUNC", "text": "Kesinti doğal arıza değildir. Kamera manuel bakım moduna alınmıştır. Kayıtlarda kullanıcı adı görünür: E.TUNC.\n\nPersonel sistemi bunun arşivde teknik erişimi olan Emre Tunç'a ait olduğunu gösterir. Emre ilk kez doğal bir ipucu üzerinden dosyaya girer.", "choices": [{"label": "İlk bulguları toparla.", "next": "first_findings"}]},
-    {"id": "yellow_label", "type": "story", "title": "Sarı Etiket", "text": "Zarfın üzerindeki sarı etikette yalnızca No:6 okunur. Oyuncu bu aşamada sarı kutunun ne olduğunu bilmez. Şimdilik kesin olan tek şey, Nisa'nın kaybolmadan hemen önce sarı etiketli bir belge taşıdığıdır.", "choices": [{"label": "İlk bulguları toparla.", "next": "first_findings"}]},
     {
-      "id": "lara",
-      "type": "choice",
-      "title": "Lara Demir",
-      "text": "Lara paniktedir ama yalnızca üzgün değildir; suçluluk da hissediyor gibidir.\n\n\"Nisa beni aramadı. Sadece mesaj attı. Ben mesajları görünce defalarca aradım ama telefonu kapalıydı.\"",
+      "id": "shadow",
+      "type": "story",
+      "title": "Belirsiz Gölge",
+      "text": "Koridor sonunda gölgeye benzeyen koyu bir leke görünür. Ancak açı kötü, ışık eksik ve görüntü kesin değildir. Tek başına bu kayıt birini suçlamaya yetmez.",
       "choices": [
-        {"label": "Lara'ya sert çık.", "next": "lara_hard", "effects": {"lara_guven": -10, "hata_puani": 6}},
-        {"label": "Sakin konuşup güven ver.", "next": "voice_record", "effects": {"lara_guven": 10, "d_ses_kaydi": true, "delil_puani": 12}},
-        {"label": "Nisa'nın son günlerde kimlerle görüştüğünü sor.", "next": "lara_contacts", "effects": {"eski_gorevli_ipucu": true, "emre_isim_ipucu": true, "delil_puani": 8}}
+        {
+          "label": "İlk bulguları toparla.",
+          "next": "first_findings"
+        }
       ]
     },
-    {"id": "lara_hard", "type": "story", "title": "Kapanan Tanık", "text": "Lara savunmaya geçer. Konuşmayı kısa keser. Nisa'nın en yakınındaki kişiden alınabilecek bazı bilgiler şimdilik kapanır.", "choices": [{"label": "İlk bulguları toparla.", "next": "first_findings"}]},
-    {"id": "voice_record", "type": "story", "title": "Ses Kaydı", "text": "Lara, Nisa'nın birkaç gün önce bir ses kaydı gönderdiğini itiraf eder. Kayıtta yaşlı bir adam konuşur:\n\n\"Nisa kızım, o kapı her gece açılmaz. Sadece biri içeriden kilidi boşa alırsa açılır. Sarı işaretli evrakı bulursan tek başına alma. Üzerindeki işarete bak. Üç çizgi varsa...\"\n\nKayıt burada kesilir. Bu noktada adamın adı bilinmez. Yalnızca kapıyı, sarı işaretli evrakı ve üç çizgiyi bildiği anlaşılır.", "choices": [{"label": "İlk bulguları toparla.", "next": "first_findings"}]},
-    {"id": "lara_contacts", "type": "story", "title": "Son Görüşmeler", "text": "Lara, Nisa'nın son günlerde arşivden eski bir bina görevlisini araştırdığını söyler. Ayrıca iş yerinde Emre adlı biriyle tartıştığını duymuştur.\n\nBu isimler henüz suçlu anlamına gelmez; sadece Nisa'nın hangi kapıları yokladığını gösterir.", "choices": [{"label": "İlk bulguları toparla.", "next": "first_findings"}]},
+    {
+      "id": "camera_cut",
+      "type": "story",
+      "title": "E.COLE",
+      "text": "Kesinti doğal arıza değildir. Kamera manuel bakım moduna alınmıştır. Kayıtlarda kullanıcı adı görünür: E.COLE.\n\nPersonel sistemi bunun arşivde teknik erişimi olan Evan Cole'a ait olduğunu gösterir. Evan Cole ilk kez doğal bir ipucu üzerinden dosyaya girer.",
+      "choices": [
+        {
+          "label": "İlk bulguları toparla.",
+          "next": "first_findings"
+        }
+      ]
+    },
+    {
+      "id": "yellow_label",
+      "type": "story",
+      "title": "Sarı Etiket",
+      "text": "Zarfın üzerindeki sarı etikette yalnızca No:6 okunur. Oyuncu bu aşamada sarı kutunun ne olduğunu bilmez. Şimdilik kesin olan tek şey, Nika Stone'un kaybolmadan hemen önce sarı etiketli bir belge taşıdığıdır.",
+      "choices": [
+        {
+          "label": "İlk bulguları toparla.",
+          "next": "first_findings"
+        }
+      ]
+    },
+    {
+      "id": "lena",
+      "type": "choice",
+      "title": "Lena Cross",
+      "text": "Lena Cross paniktedir ama yalnızca üzgün değildir; suçluluk da hissediyor gibidir.\n\n\"Nika Stone beni aramadı. Sadece mesaj attı. Ben mesajları görünce defalarca aradım ama telefonu kapalıydı.\"",
+      "choices": [
+        {
+          "label": "Lena Cross'a sert çık.",
+          "next": "lena_hard",
+          "effects": {
+            "lena_guven": -10,
+            "hata_puani": 6
+          }
+        },
+        {
+          "label": "Sakin konuşup güven ver.",
+          "next": "voice_record",
+          "effects": {
+            "lena_guven": 10,
+            "d_ses_kaydi": true,
+            "delil_puani": 12
+          }
+        },
+        {
+          "label": "Nika Stone'un son günlerde kimlerle görüştüğünü sor.",
+          "next": "lena_contacts",
+          "effects": {
+            "eski_gorevli_ipucu": true,
+            "evan_isim_ipucu": true,
+            "delil_puani": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "lena_hard",
+      "type": "story",
+      "title": "Kapanan Tanık",
+      "text": "Lena Cross savunmaya geçer. Konuşmayı kısa keser. Nika Stone'un en yakınındaki kişiden alınabilecek bazı bilgiler şimdilik kapanır.",
+      "choices": [
+        {
+          "label": "İlk bulguları toparla.",
+          "next": "first_findings"
+        }
+      ]
+    },
+    {
+      "id": "voice_record",
+      "type": "story",
+      "title": "Ses Kaydı",
+      "text": "Lena Cross, Nika Stone'un birkaç gün önce bir ses kaydı gönderdiğini itiraf eder. Kayıtta yaşlı bir adam konuşur:\n\n\"Nika Stone kızım, o kapı her gece açılmaz. Sadece biri içeriden kilidi boşa alırsa açılır. Sarı işaretli evrakı bulursan tek başına alma. Üzerindeki işarete bak. Üç çizgi varsa...\"\n\nKayıt burada kesilir. Bu noktada adamın adı bilinmez. Yalnızca kapıyı, sarı işaretli evrakı ve üç çizgiyi bildiği anlaşılır.",
+      "choices": [
+        {
+          "label": "İlk bulguları toparla.",
+          "next": "first_findings"
+        }
+      ]
+    },
+    {
+      "id": "lena_contacts",
+      "type": "story",
+      "title": "Son Görüşmeler",
+      "text": "Lena Cross, Nika Stone'un son günlerde arşivden eski bir bina görevlisini araştırdığını söyler. Ayrıca iş yerinde Evan Cole adlı biriyle tartıştığını duymuştur.\n\nBu isimler henüz suçlu anlamına gelmez; sadece Nika Stone'un hangi kapıları yokladığını gösterir.",
+      "choices": [
+        {
+          "label": "İlk bulguları toparla.",
+          "next": "first_findings"
+        }
+      ]
+    },
     {
       "id": "first_findings",
       "type": "choice",
       "title": "İlk Bulgular",
-      "text": "Dosya artık yalnızca kayıp kişi dosyası gibi durmaz. Nisa'nın bıraktığı ipuçları eski arşiv bölümlerine, teknik erişime ve sarı etiketli evrak hareketlerine işaret eder.",
+      "text": "Dosya artık yalnızca kayıp kişi dosyası gibi durmaz. Nika Stone'un bıraktığı ipuçları eski arşiv bölümlerine, teknik erişime ve sarı etiketli evrak hareketlerine işaret eder.",
       "choices": [
-        {"label": "Ses kaydındaki yaşlı adamın kim olduğunu araştır.", "next": "rauf_intro", "requires": {"d_ses_kaydi": true}, "effects": {"d_rauf": true, "delil_puani": 10}},
-        {"label": "Eski bina görevlisi ipucunu personel kayıtlarında ara.", "next": "rauf_intro", "requires": {"eski_gorevli_ipucu": true}, "effects": {"d_rauf": true, "delil_puani": 8}},
-        {"label": "E.TUNC kullanıcı adını araştır.", "next": "emre_intro", "requires": {"d_kamera_kesintisi": true}, "effects": {"d_emre": true, "delil_puani": 8}},
-        {"label": "Sarı etiketli zarfın kaynağını araştır.", "next": "yellow_box_intro", "requires": {"d_sari_etiket": true}, "effects": {"d_sari_kutu": true, "delil_puani": 12}},
-        {"label": "Eski Depo hattını araştır.", "next": "old_depot", "requires": {"d_otobus_bileti": true}, "effects": {"depo_baglanti": true, "delil_puani": 10}}
+        {
+          "label": "Ses kaydındaki yaşlı adamın kim olduğunu araştır.",
+          "next": "ralph_intro",
+          "requires": {
+            "d_ses_kaydi": true
+          },
+          "effects": {
+            "d_ralph": true,
+            "delil_puani": 10
+          }
+        },
+        {
+          "label": "Eski bina görevlisi ipucunu personel kayıtlarında ara.",
+          "next": "ralph_intro",
+          "requires": {
+            "eski_gorevli_ipucu": true
+          },
+          "effects": {
+            "d_ralph": true,
+            "delil_puani": 8
+          }
+        },
+        {
+          "label": "E.COLE kullanıcı adını araştır.",
+          "next": "evan_intro",
+          "requires": {
+            "d_kamera_kesintisi": true
+          },
+          "effects": {
+            "d_evan": true,
+            "delil_puani": 8
+          }
+        },
+        {
+          "label": "Sarı etiketli zarfın kaynağını araştır.",
+          "next": "yellow_box_intro",
+          "requires": {
+            "d_sari_etiket": true
+          },
+          "effects": {
+            "d_sari_kutu": true,
+            "delil_puani": 12
+          }
+        },
+        {
+          "label": "Old Freight Depot hattını araştır.",
+          "next": "old_depot",
+          "requires": {
+            "d_otobus_bileti": true
+          },
+          "effects": {
+            "depo_baglanti": true,
+            "delil_puani": 10
+          }
+        }
       ]
     },
-    {"id": "fallback_clock", "type": "story", "title": "Dosyayı Yeniden Değerlendir", "text": "Kırık saat yeniden incelenir. Camındaki çatlak dışarıdan gelen darbeye değil, aceleyle çıkarılmış bir parçaya benzer. Saatin durduğu 02:17 ile kamera kesintisi arasındaki boşluk yeniden önem kazanır.", "effects": {"d_kamera_kesintisi": true, "delil_puani": 6}, "choices": [{"label": "Kamera kesintisini yeniden araştır.", "next": "camera_cut"}]},
-    {"id": "rauf_intro", "type": "story", "title": "Rauf Yıldırım", "text": "Personel kayıtları sesin Rauf Yıldırım'a ait olduğunu gösterir. Rauf yıllar önce Kuzey Terminali Belediye Arşivi'nde bina görevlisi olarak çalışmıştır. Eski kapıları, bodrum geçitlerini ve kayıt dışı odaları bilen az kişiden biridir.\n\nBu noktadan sonra Rauf Usta'yı bulmak artık oyuncunun bildiği bir hedef haline gelir.", "choices": [{"label": "Rauf Usta'yı bul.", "next": "rauf_meeting"}]},
-    {"id": "rauf_meeting", "type": "story", "title": "Rauf'un Bildikleri", "text": "Rauf başta konuşmak istemez. Sonra Nisa'nın kendisinden bina planlarını istediğini kabul eder.\n\n17B rafını bilir. Sarı işaretli evrakların resmi sisteme girmeyen belgeler olduğunu söyler. Bunlar eski imar dosyaları, tapu ve mülkiyet kayıtları, yıkım kararları ve belediye onay formlarıyla ilgilidir.\n\nRauf, \"Sarı işaretli evraklar resmi kayıt kutusu değildir. Bazı dosyalar yıllarca sistem dışına böyle çıkarıldı,\" der.\n\nÜç çizgi sembolünü 2019 yılında başka bir kayıp dosyasında gördüğünü de ekler.", "effects": {"d_sari_kutu": true, "d_uc_cizgi": true, "dosya_2019_acildi": true, "delil_puani": 18}, "choices": [{"label": "Bodrum 17B'ye in.", "next": "basement_17b"}]},
-    {"id": "emre_intro", "type": "choice", "title": "Emre Tunç", "text": "Emre arşivde teknik sisteme erişimi olan çalışandır. O gece izinli görünür, ama kamera onun kullanıcı adıyla bakım moduna alınmıştır.\n\nEmre suçlu gibi değil, korkmuş biri gibi durur. Yine de yanlış soru dosyayı kapatabilir.", "choices": [{"label": "Emre'yi hemen suçla.", "next": "emre_accused", "effects": {"emre_suclandi": true, "hata_puani": 14}}, {"label": "Emre'ye dikkatli sorular sor.", "next": "emre_careful", "effects": {"emre_tanik": true, "delil_puani": 12}}]},
-    {"id": "emre_accused", "type": "story", "title": "Erken Suçlama", "text": "Emre kapanır. \"Ben o gece orada değildim,\" der ve başka hiçbir şey söylemez. Erken suçlama onu ana suçlu gibi gösterebilir, ama eldeki veriler hâlâ eksiktir.", "choices": [{"label": "Bodrum 17B bağlantısını ara.", "next": "basement_17b"}]},
-    {"id": "emre_careful", "type": "story", "title": "Korkmuş Tanık", "text": "Emre, şifresini Nisa'nın da bildiğini söyler. Sarı etiketli zarfı Nisa'nın aradığını kabul eder. Terminal arkasındaki peronda 17B yazılı küçük bir anahtar aldığını da itiraf eder.\n\nEmre ana suçlu gibi görünmez. Daha çok sisteme erişim vermiş, sonra korkup susmuş bir tanıktır.", "effects": {"d_17b": true, "delil_puani": 10}, "choices": [{"label": "Bodrum 17B'ye in.", "next": "basement_17b"}]},
-    {"id": "yellow_box_intro", "type": "story", "title": "Sarı Kutu Sistemi", "text": "Arşiv kayıtlarında bir satır bulunur: 17B / No:6 / Teslim edilmedi.\n\nSarı kutular resmi arşiv kutusu değildir. Eski imar dosyaları, tapu ve mülkiyet kayıtları, yıkım kararları, belediye onay formları, teslim listeleri ve eski kamera kayıtları gibi gerçek belgeleri sistem dışına taşımak için kullanılan kayıt dışı kutulardır.\n\nNisa'nın elindeki sarı etiketli zarf bu sistemin küçük bir parçasıdır.", "effects": {"d_sari_kutu": true, "delil_puani": 10}, "choices": [{"label": "Bodrum 17B kaydını takip et.", "next": "basement_17b"}]},
-    {"id": "basement_17b", "type": "choice", "title": "Bodrum 17B", "text": "Bodrum 17B belediye arşiv binasının resmi olarak kullanılmayan eski arşiv bölümüdür. Dar, raflı, dosya kutularıyla dolu ve bina içinde kalan bir yerdir; şehir dışındaki Eski Depo'dan tamamen farklıdır.\n\n17B rafının altında boş bir kutu izi vardır. Yerde kırık saat camı bulunur. Sarı etiket bağlantısı aynı numaraya çıkar: No:6.", "effects": {"d_17b": true, "delil_puani": 10}, "choices": [{"label": "Raf arkasını kontrol et.", "next": "nisa_note", "effects": {"nisa_notu": true, "delil_puani": 12}}, {"label": "Kırık cam parçalarını incele.", "next": "glass_pieces", "effects": {"delil_puani": 6}}, {"label": "Eski Depo bağlantısını takip et.", "next": "old_depot", "requires": {"d_sari_kutu": true}, "effects": {"depo_baglanti": true}}]},
-    {"id": "nisa_note", "type": "story", "title": "Nisa'nın Notu", "text": "Raf arkasında Nisa'nın notu bulunur:\n\n\"Beni arıyorlarsa yanlış yerdeler.\nBen kutuyu aldım.\nAma içindekini görmeden kimseye güvenme.\"\n\nNisa pasif bir kurban değildir. Kutuyu bilinçli olarak almış ve içindeki belgeleri görmek için Eski Depo bağlantısını kullanmıştır.", "effects": {"depo_baglanti": true, "delil_puani": 10}, "choices": [{"label": "Eski Depo'ya git.", "next": "old_depot"}]},
-    {"id": "glass_pieces", "type": "story", "title": "Saat Camı", "text": "Cam parçaları Nisa'nın kırık saatiyle uyumludur. Saat yalnızca bir eşya değil, 02:17'de açılan kapıya ve 17B bölümüne bırakılmış bir işarettir.", "choices": [{"label": "Eski Depo bağlantısını takip et.", "next": "old_depot"}]},
-    {"id": "old_depot", "type": "choice", "title": "Eski Depo", "text": "Eski Depo şehir dışındaki terk edilmiş bakım ve depolama alanıdır. Geniş, metal kapılı, yüksek tavanlı, paletli ve soğuk ışıklı bir yerdir. Arşiv odası gibi değil, taşınan malzemelerin geçici olarak saklandığı endüstriyel bir alan gibi görünür.\n\nZinciri yeni kesilmiş girişin içinde sarı kutu bulunur. Üzerinde No:6 / 17B / Teslim edilmedi yazar. Kutunun içinden para ya da silah değil; eski imar dosyaları, tapu kayıtları, yıkım kararları, belediye onay formları, teslim listeleri, silinmiş kamera kayıtları ve bir USB bellek çıkar.\n\nSuçun özü netleşir: birileri yıllardır belediye arşivindeki eski kayıtları değiştirerek bazı arsaları temiz göstermektedir.", "effects": {"d_sari_kutu": true, "imar_yolsuzlugu_net": true, "delil_puani": 10}, "choices": [{"label": "Fotoğrafları ve teslim listelerini incele.", "next": "photos", "effects": {"fotograflar_incelendi": true, "d_uc_cizgi": true, "delil_puani": 14}}, {"label": "USB belleği al.", "next": "usb", "effects": {"d_usb": true, "usb_alindi": true, "delil_puani": 14}}, {"label": "Sesin geldiği odaya git.", "next": "find_nisa", "effects": {"nisa_bulundu": true}}]},
-    {"id": "photos", "type": "story", "title": "Teslim Listeleri", "text": "Fotoğraflarda ve teslim listelerinde 2019, 2021, 2024 ve 2026 tarihleri görülür. Aynı III işareti birden fazla kutuda tekrar eder.\n\nNotlarda üçlü yapı sezilir: belediye içinde kayıtları değiştiren kişi, sarı kutuları taşıyan arşiv bağlantısı ve bu değişikliklerden para kazanan dış grup.", "effects": {"iii_anlami_ipucu": true}, "choices": [{"label": "USB belleği de al.", "next": "usb", "effects": {"d_usb": true, "usb_alindi": true, "delil_puani": 10}}, {"label": "Sesin geldiği odaya git.", "next": "find_nisa"}]},
-    {"id": "usb", "type": "story", "title": "USB Bellek", "text": "USB bellek küçük ve çizilmiştir, ama çalışır durumdadır. İçinde silinmiş kamera kayıtları, sahte teslim listeleri ve değiştirilmiş belediye raporlarının orijinal karşılıklarına ait dosyalar vardır.\n\nBu delil, Nisa'nın bulduğu şeyin kişisel bir tehdit değil, arşiv kayıtları üzerinden yürütülen gerçek bir yolsuzluk olduğunu gösterir.", "choices": [{"label": "Fotoğrafları ve teslim listelerini incele.", "next": "photos", "effects": {"fotograflar_incelendi": true, "d_uc_cizgi": true, "delil_puani": 10}}, {"label": "Sesin geldiği odaya git.", "next": "find_nisa"}]},
-    {"id": "find_nisa", "type": "story", "title": "Nisa Bulundu", "text": "Nisa Eski Depo'da bulunur. Yorgundur ama hayattadır. Kaçırılmış gibi tamamen çaresiz değildir; kutuyu açmış, belgeleri incelemiş ama dışarı çıkamamıştır.\n\n\"Ben kaybolmadım. Beni kayıp göstermek istediler.\"\n\n\"17B'deki eski kayıtları buldum. Bazı arsalar yıllar önce kamu alanıydı. Sonra sistemde özel proje alanı gibi gösterilmiş.\"\n\n\"Eski dosyalar sarı kutularla arşivden çıkarılmış. Yerlerine değiştirilmiş kopyalar konmuş. Ben sadece bir kutuyu buldum. Ama listede başka kutular da var.\"\n\nDosya 01'in suçu artık nettir: belediye arşivindeki imar, tapu, mülkiyet ve yıkım belgeleri para için değiştirilmiştir.", "effects": {"nisa_bulundu": true, "imar_yolsuzlugu_net": true, "delil_puani": 10}, "choices": [{"label": "Depoya gelen adımları dinle.", "next": "emre_confrontation"}]},
-    {"id": "emre_confrontation", "type": "choice", "title": "Emre ile Yüzleşme", "text": "Depoda kapı açılır ve Emre gelir. Saldırgan değildir. Elinde 17B anahtarı vardır.\n\nEmre: \"Ben onu korumaya çalıştım.\"\nNisa: \"Hayır. Sen sustun. Bu aynı şey değil.\"", "choices": [{"label": "Emre'yi hemen suçla.", "next": "ending_bad", "effects": {"emre_suclandi": true, "hata_puani": 12}}, {"label": "Emre'ye ne sakladığını sor.", "next": "emre_truth", "effects": {"emre_tanik": true, "delil_puani": 10}}, {"label": "Nisa'yı alıp kaçmaya çalış.", "next": "ending_normal", "effects": {"hata_puani": 8}}]},
-    {"id": "emre_truth", "type": "choice", "title": "En Zayıf Halka", "text": "Emre titreyerek konuşur:\n\n\"Ben sadece şifre verdim. Önce ne taşıdıklarını bilmiyordum.\"\n\n\"Nisa kutuyu bulunca bana geldi. Yardım etmek istedim ama korktum.\"\n\n\"Onları koruyan kişi ben değilim. Ben sadece en zayıf halkaydım.\"\n\nEmre ana suçlu değildir. Teknik erişimi vermiş, sonra susmuş korkmuş bir tanıktır. Asıl yapı daha büyüktür.", "choices": [{"label": "USB ve III bağlantısını çöz.", "next": "ending_secret", "requires": {"usb_alindi": true, "d_uc_cizgi": true, "dosya_2019_acildi": true, "fotograflar_incelendi": true}}, {"label": "USB içeriğini resmi rapora ekle.", "next": "ending_true", "requires": {"usb_alindi": true}}, {"label": "Önce Nisa'yı güvenli yere çıkar.", "next": "ending_normal"}]},
-    {"id": "ending_bad", "type": "ending", "title": "Kötü Final: Yanlış Suçlama", "text": "Emre ana suçlu olarak bildirilir. Dosya hızlıca kapanır. Nisa kurtulur ama sarı kutuların arkasındaki yapı ortaya çıkmaz.\n\nBirkaç gün sonra 17B bölümünde yangın çıkar. Eski raflar, teslim listeleri ve kutu izleri yok olur.\n\nBilinmeyen numaradan tek mesaj gelir:\n\"Yanlış kişiyi seçtin.\"", "endingId": "bad_wrong_accusation"},
-    {"id": "ending_normal", "type": "ending", "title": "Normal Final: Nisa Kurtarıldı", "text": "Nisa güvenli yere çıkarılır. Olay resmi raporda kurum içi tehdit ve veri saklama olarak geçer.\n\nNisa'nın anlattıkları arşivdeki sahte imar ve mülkiyet kayıtlarını işaret eder, ama USB olmadan sarı kutuların arkasındaki üçlü ağ kanıtlanamaz.", "endingId": "normal_nisa_saved"},
-    {"id": "ending_true", "type": "ending", "title": "Doğru Final: Sarı Kutu Açıldı", "text": "USB açılır. Silinmiş kamera kayıtları, teslim listeleri ve sahte raporların orijinal karşılıkları ortaya çıkar.\n\nNisa ifade verir:\n\"Ben kaybolmadım. Beni kayıp göstermek istediler.\"\n\nDosyada suçun türü netleşir: eski imar, tapu, mülkiyet ve yıkım belgeleri değiştirilmiş; gerçek belgeler sarı kutularla sistem dışına çıkarılmıştır.\n\nKırık saatin arka kapağında küçük bir kazıma görülür: III", "endingId": "true_yellow_box_opened"},
-    {"id": "ending_secret", "type": "ending", "title": "Gizli Final: Üçlü Ağ", "text": "Dosya resmi sisteme hemen kapatılmaz. USB kopyalanır. 2019 dosyası yeniden açılır.\n\nIII sembolünün anlamı kısmen çözülür:\nI - Belediye içinde kayıtları değiştiren kişi.\nII - Sarı kutuları taşıyan arşiv bağlantısı.\nIII - Bu değişikliklerden para kazanan dış çıkar grubu.\n\nBu bir kişi değildir. Bu bir üçlü ağdır.\n\nBilinmeyen numaradan mesaj gelir:\n\"Birinci kutuyu açtın.\nİkincisi sende değil.\nSaat yine 02:17'de duracak.\"\n\nDosya 02 kilidi açılır: İkinci Kutu. İkinci kutunun teslim bilgisinde tek isim görünür: Lara Demir.", "endingId": "secret_three_lines", "effects": {"dosya_02_unlocked": true}}
+    {
+      "id": "fallback_clock",
+      "type": "story",
+      "title": "Dosyayı Yeniden Değerlendir",
+      "text": "Kırık saat yeniden incelenir. Camındaki çatlak dışarıdan gelen darbeye değil, aceleyle çıkarılmış bir parçaya benzer. Saatin durduğu 02:17 ile kamera kesintisi arasındaki boşluk yeniden önem kazanır.",
+      "effects": {
+        "d_kamera_kesintisi": true,
+        "delil_puani": 6
+      },
+      "choices": [
+        {
+          "label": "Kamera kesintisini yeniden araştır.",
+          "next": "camera_cut"
+        }
+      ]
+    },
+    {
+      "id": "ralph_intro",
+      "type": "story",
+      "title": "Ralph Grayson",
+      "text": "Personel kayıtları sesin Ralph Grayson'a ait olduğunu gösterir. Ralph Grayson yıllar önce Northbridge Municipal Archive'da bina görevlisi olarak çalışmıştır. Eski kapıları, bodrum geçitlerini ve kayıt dışı odaları bilen az kişiden biridir.\n\nBu noktadan sonra Ralph Grayson'u bulmak artık oyuncunun bildiği bir hedef haline gelir.",
+      "choices": [
+        {
+          "label": "Ralph Grayson'u bul.",
+          "next": "ralph_meeting"
+        }
+      ]
+    },
+    {
+      "id": "ralph_meeting",
+      "type": "story",
+      "title": "Ralph Grayson'ın Bildikleri",
+      "text": "Ralph Grayson başta konuşmak istemez. Sonra Nika Stone'un kendisinden bina planlarını istediğini kabul eder.\n\n17B rafını bilir. Sarı işaretli evrakların resmi sisteme girmeyen belgeler olduğunu söyler. Bunlar eski imar dosyaları, tapu ve mülkiyet kayıtları, yıkım kararları ve belediye onay formlarıyla ilgilidir.\n\nRalph Grayson, \"Sarı işaretli evraklar resmi kayıt kutusu değildir. Bazı dosyalar yıllarca sistem dışına böyle çıkarıldı,\" der.\n\nÜç çizgi sembolünü 2019 yılında başka bir kayıp dosyasında gördüğünü de ekler.",
+      "effects": {
+        "d_sari_kutu": true,
+        "d_uc_cizgi": true,
+        "dosya_2019_acildi": true,
+        "delil_puani": 18
+      },
+      "choices": [
+        {
+          "label": "Bodrum 17B'ye in.",
+          "next": "basement_17b"
+        }
+      ]
+    },
+    {
+      "id": "evan_intro",
+      "type": "choice",
+      "title": "Evan Cole",
+      "text": "Evan Cole arşivde teknik sisteme erişimi olan çalışandır. O gece izinli görünür, ama kamera onun kullanıcı adıyla bakım moduna alınmıştır.\n\nEvan Cole suçlu gibi değil, korkmuş biri gibi durur. Yine de yanlış soru dosyayı kapatabilir.",
+      "choices": [
+        {
+          "label": "Evan Cole'u hemen suçla.",
+          "next": "evan_accused",
+          "effects": {
+            "evan_suclandi": true,
+            "hata_puani": 14
+          }
+        },
+        {
+          "label": "Evan Cole'a dikkatli sorular sor.",
+          "next": "evan_careful",
+          "effects": {
+            "evan_tanik": true,
+            "delil_puani": 12
+          }
+        }
+      ]
+    },
+    {
+      "id": "evan_accused",
+      "type": "story",
+      "title": "Erken Suçlama",
+      "text": "Evan Cole kapanır. \"Ben o gece orada değildim,\" der ve başka hiçbir şey söylemez. Erken suçlama onu ana suçlu gibi gösterebilir, ama eldeki veriler hâlâ eksiktir.",
+      "choices": [
+        {
+          "label": "Bodrum 17B bağlantısını ara.",
+          "next": "basement_17b"
+        }
+      ]
+    },
+    {
+      "id": "evan_careful",
+      "type": "story",
+      "title": "Korkmuş Tanık",
+      "text": "Evan Cole, şifresini Nika Stone'un da bildiğini söyler. Sarı etiketli zarfı Nika Stone'un aradığını kabul eder. Terminal arkasındaki peronda 17B yazılı küçük bir anahtar aldığını da itiraf eder.\n\nEvan Cole ana suçlu gibi görünmez. Daha çok sisteme erişim vermiş, sonra korkup susmuş bir tanıktır.",
+      "effects": {
+        "d_17b": true,
+        "delil_puani": 10
+      },
+      "choices": [
+        {
+          "label": "Bodrum 17B'ye in.",
+          "next": "basement_17b"
+        }
+      ]
+    },
+    {
+      "id": "yellow_box_intro",
+      "type": "story",
+      "title": "Sarı Kutu Sistemi",
+      "text": "Arşiv kayıtlarında bir satır bulunur: 17B / No:6 / Teslim edilmedi.\n\nSarı kutular resmi arşiv kutusu değildir. Eski imar dosyaları, tapu ve mülkiyet kayıtları, yıkım kararları, belediye onay formları, teslim listeleri ve eski kamera kayıtları gibi gerçek belgeleri sistem dışına taşımak için kullanılan kayıt dışı kutulardır.\n\nNika Stone'un elindeki sarı etiketli zarf bu sistemin küçük bir parçasıdır.",
+      "effects": {
+        "d_sari_kutu": true,
+        "delil_puani": 10
+      },
+      "choices": [
+        {
+          "label": "Bodrum 17B kaydını takip et.",
+          "next": "basement_17b"
+        }
+      ]
+    },
+    {
+      "id": "basement_17b",
+      "type": "choice",
+      "title": "Bodrum 17B",
+      "text": "Bodrum 17B belediye arşiv binasının resmi olarak kullanılmayan eski arşiv bölümüdür. Dar, raflı, dosya kutularıyla dolu ve bina içinde kalan bir yerdir; şehir dışındaki Old Freight Depot'tan tamamen farklıdır.\n\n17B rafının altında boş bir kutu izi vardır. Yerde kırık saat camı bulunur. Sarı etiket bağlantısı aynı numaraya çıkar: No:6.",
+      "effects": {
+        "d_17b": true,
+        "delil_puani": 10
+      },
+      "choices": [
+        {
+          "label": "Raf arkasını kontrol et.",
+          "next": "nika_note",
+          "effects": {
+            "nika_notu": true,
+            "delil_puani": 12
+          }
+        },
+        {
+          "label": "Kırık cam parçalarını incele.",
+          "next": "glass_pieces",
+          "effects": {
+            "delil_puani": 6
+          }
+        },
+        {
+          "label": "Old Freight Depot bağlantısını takip et.",
+          "next": "old_depot",
+          "requires": {
+            "d_sari_kutu": true
+          },
+          "effects": {
+            "depo_baglanti": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "nika_note",
+      "type": "story",
+      "title": "Nika Stone'un Notu",
+      "text": "Raf arkasında Nika Stone'un notu bulunur:\n\n\"Beni arıyorlarsa yanlış yerdeler.\nBen kutuyu aldım.\nAma içindekini görmeden kimseye güvenme.\"\n\nNika Stone pasif bir kurban değildir. Kutuyu bilinçli olarak almış ve içindeki belgeleri görmek için Old Freight Depot bağlantısını kullanmıştır.",
+      "effects": {
+        "depo_baglanti": true,
+        "delil_puani": 10
+      },
+      "choices": [
+        {
+          "label": "Old Freight Depot'a git.",
+          "next": "old_depot"
+        }
+      ]
+    },
+    {
+      "id": "glass_pieces",
+      "type": "story",
+      "title": "Saat Camı",
+      "text": "Cam parçaları Nika Stone'un kırık saatiyle uyumludur. Saat yalnızca bir eşya değil, 02:17'de açılan kapıya ve 17B bölümüne bırakılmış bir işarettir.",
+      "choices": [
+        {
+          "label": "Old Freight Depot bağlantısını takip et.",
+          "next": "old_depot"
+        }
+      ]
+    },
+    {
+      "id": "old_depot",
+      "type": "choice",
+      "title": "Old Freight Depot",
+      "text": "Old Freight Depot şehir dışındaki terk edilmiş bakım ve depolama alanıdır. Geniş, metal kapılı, yüksek tavanlı, paletli ve soğuk ışıklı bir yerdir. Arşiv odası gibi değil, taşınan malzemelerin geçici olarak saklandığı endüstriyel bir alan gibi görünür.\n\nZinciri yeni kesilmiş girişin içinde sarı kutu bulunur. Üzerinde No:6 / 17B / Teslim edilmedi yazar. Kutunun içinden para ya da silah değil; eski imar dosyaları, tapu kayıtları, yıkım kararları, belediye onay formları, teslim listeleri, silinmiş kamera kayıtları ve bir USB bellek çıkar.\n\nSuçun özü netleşir: birileri yıllardır belediye arşivindeki eski kayıtları değiştirerek bazı arsaları temiz göstermektedir.",
+      "effects": {
+        "d_sari_kutu": true,
+        "imar_yolsuzlugu_net": true,
+        "delil_puani": 10
+      },
+      "choices": [
+        {
+          "label": "Fotoğrafları ve teslim listelerini incele.",
+          "next": "photos",
+          "effects": {
+            "fotograflar_incelendi": true,
+            "d_uc_cizgi": true,
+            "delil_puani": 14
+          }
+        },
+        {
+          "label": "USB belleği al.",
+          "next": "usb",
+          "effects": {
+            "d_usb": true,
+            "usb_alindi": true,
+            "delil_puani": 14
+          }
+        },
+        {
+          "label": "Sesin geldiği odaya git.",
+          "next": "find_nika",
+          "effects": {
+            "nika_bulundu": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "photos",
+      "type": "story",
+      "title": "Teslim Listeleri",
+      "text": "Fotoğraflarda ve teslim listelerinde 2019, 2021, 2024 ve 2026 tarihleri görülür. Aynı III işareti birden fazla kutuda tekrar eder.\n\nTeslim notlarında Edwin Vale adı eski bir nakliye bağlantısı olarak geçer. Başka bir ödeme notunda Marcus Veyne ve Veyron Group yalnızca belirsiz bir dış bağlantı olarak görünür; Dosya 01 bu isimleri tamamen çözmez.\n\nNotlarda üçlü yapı sezilir: belediye içinde kayıtları değiştiren kişi, sarı kutuları taşıyan arşiv bağlantısı ve bu değişikliklerden para kazanan dış grup.",
+      "effects": {
+        "iii_anlami_ipucu": true
+      },
+      "choices": [
+        {
+          "label": "USB belleği de al.",
+          "next": "usb",
+          "effects": {
+            "d_usb": true,
+            "usb_alindi": true,
+            "delil_puani": 10
+          }
+        },
+        {
+          "label": "Sesin geldiği odaya git.",
+          "next": "find_nika"
+        }
+      ]
+    },
+    {
+      "id": "usb",
+      "type": "story",
+      "title": "USB Bellek",
+      "text": "USB bellek küçük ve çizilmiştir, ama çalışır durumdadır. İçinde silinmiş kamera kayıtları, sahte teslim listeleri ve değiştirilmiş belediye raporlarının orijinal karşılıklarına ait dosyalar vardır.\n\nBu delil, Nika Stone'un bulduğu şeyin kişisel bir tehdit değil, arşiv kayıtları üzerinden yürütülen gerçek bir yolsuzluk olduğunu gösterir.",
+      "choices": [
+        {
+          "label": "Fotoğrafları ve teslim listelerini incele.",
+          "next": "photos",
+          "effects": {
+            "fotograflar_incelendi": true,
+            "d_uc_cizgi": true,
+            "delil_puani": 10
+          }
+        },
+        {
+          "label": "Sesin geldiği odaya git.",
+          "next": "find_nika"
+        }
+      ]
+    },
+    {
+      "id": "find_nika",
+      "type": "story",
+      "title": "Nika Stone Bulundu",
+      "text": "Nika Stone Old Freight Depot'ta bulunur. Yorgundur ama hayattadır. Kaçırılmış gibi tamamen çaresiz değildir; kutuyu açmış, belgeleri incelemiş ama dışarı çıkamamıştır.\n\n\"Ben kaybolmadım. Beni kayıp göstermek istediler.\"\n\n\"17B'deki eski kayıtları buldum. Bazı arsalar yıllar önce kamu alanıydı. Sonra sistemde özel proje alanı gibi gösterilmiş.\"\n\n\"Eski dosyalar sarı kutularla arşivden çıkarılmış. Yerlerine değiştirilmiş kopyalar konmuş. Ben sadece bir kutuyu buldum. Ama listede başka kutular da var.\"\n\nDosya 01'in suçu artık nettir: belediye arşivindeki imar, tapu, mülkiyet ve yıkım belgeleri para için değiştirilmiştir.",
+      "effects": {
+        "nika_bulundu": true,
+        "imar_yolsuzlugu_net": true,
+        "delil_puani": 10
+      },
+      "choices": [
+        {
+          "label": "Depoya gelen adımları dinle.",
+          "next": "evan_confrontation"
+        }
+      ]
+    },
+    {
+      "id": "evan_confrontation",
+      "type": "choice",
+      "title": "Evan Cole ile Yüzleşme",
+      "text": "Depoda kapı açılır ve Evan Cole gelir. Saldırgan değildir. Elinde 17B anahtarı vardır.\n\nEvan Cole: \"Ben onu korumaya çalıştım.\"\nNika Stone: \"Hayır. Sen sustun. Bu aynı şey değil.\"",
+      "choices": [
+        {
+          "label": "Evan Cole'u hemen suçla.",
+          "next": "ending_bad",
+          "effects": {
+            "evan_suclandi": true,
+            "hata_puani": 12
+          }
+        },
+        {
+          "label": "Evan Cole'a ne sakladığını sor.",
+          "next": "evan_truth",
+          "effects": {
+            "evan_tanik": true,
+            "delil_puani": 10
+          }
+        },
+        {
+          "label": "Nika Stone'u alıp kaçmaya çalış.",
+          "next": "ending_normal",
+          "effects": {
+            "hata_puani": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "evan_truth",
+      "type": "choice",
+      "title": "En Zayıf Halka",
+      "text": "Evan Cole titreyerek konuşur:\n\n\"Ben sadece şifre verdim. Önce ne taşıdıklarını bilmiyordum.\"\n\n\"Nika Stone kutuyu bulunca bana geldi. Yardım etmek istedim ama korktum.\"\n\n\"Onları koruyan kişi ben değilim. Ben sadece en zayıf halkaydım.\"\n\nEvan Cole ana suçlu değildir. Teknik erişimi vermiş, sonra susmuş korkmuş bir tanıktır. Asıl yapı daha büyüktür.",
+      "choices": [
+        {
+          "label": "USB ve III bağlantısını çöz.",
+          "next": "ending_secret",
+          "requires": {
+            "usb_alindi": true,
+            "d_uc_cizgi": true,
+            "dosya_2019_acildi": true,
+            "fotograflar_incelendi": true
+          }
+        },
+        {
+          "label": "USB içeriğini resmi rapora ekle.",
+          "next": "ending_true",
+          "requires": {
+            "usb_alindi": true
+          }
+        },
+        {
+          "label": "Önce Nika Stone'u güvenli yere çıkar.",
+          "next": "ending_normal"
+        }
+      ]
+    },
+    {
+      "id": "ending_bad",
+      "type": "ending",
+      "title": "Kötü Final: Yanlış Suçlama",
+      "text": "Evan Cole ana suçlu olarak bildirilir. Dosya hızlıca kapanır. Nika Stone kurtulur ama sarı kutuların arkasındaki yapı ortaya çıkmaz.\n\nBirkaç gün sonra 17B bölümünde yangın çıkar. Eski raflar, teslim listeleri ve kutu izleri yok olur.\n\nBilinmeyen numaradan tek mesaj gelir:\n\"Yanlış kişiyi seçtin.\"",
+      "endingId": "bad_wrong_accusation"
+    },
+    {
+      "id": "ending_normal",
+      "type": "ending",
+      "title": "Normal Final: Nika Stone Kurtarıldı",
+      "text": "Nika Stone güvenli yere çıkarılır. Olay resmi raporda kurum içi tehdit ve veri saklama olarak geçer.\n\nNika Stone'un anlattıkları arşivdeki sahte imar ve mülkiyet kayıtlarını işaret eder, ama USB olmadan sarı kutuların arkasındaki üçlü ağ kanıtlanamaz.",
+      "endingId": "normal_nika_saved"
+    },
+    {
+      "id": "ending_true",
+      "type": "ending",
+      "title": "Doğru Final: Sarı Kutu Açıldı",
+      "text": "USB açılır. Silinmiş kamera kayıtları, teslim listeleri ve sahte raporların orijinal karşılıkları ortaya çıkar.\n\nNika Stone ifade verir:\n\"Ben kaybolmadım. Beni kayıp göstermek istediler.\"\n\nDosyada suçun türü netleşir: eski imar, tapu, mülkiyet ve yıkım belgeleri değiştirilmiş; gerçek belgeler sarı kutularla sistem dışına çıkarılmıştır.\n\nKırık saatin arka kapağında küçük bir kazıma görülür: III",
+      "endingId": "true_yellow_box_opened"
+    },
+    {
+      "id": "ending_secret",
+      "type": "ending",
+      "title": "Gizli Final: Üçlü Ağ",
+      "text": "Dosya resmi sisteme hemen kapatılmaz. USB kopyalanır. 2019 dosyası yeniden açılır.\n\nIII sembolünün anlamı kısmen çözülür:\nI - Belediye içinde kayıtları değiştiren kişi.\nII - Sarı kutuları taşıyan arşiv bağlantısı.\nIII - Bu değişikliklerden para kazanan dış çıkar grubu.\n\nBu bir kişi değildir. Bu bir üçlü ağdır.\n\nBilinmeyen numaradan mesaj gelir:\n\"Birinci kutuyu açtın.\nİkincisi sende değil.\nSaat yine 02:17'de duracak.\"\n\nDosya 02 kilidi açılır: İkinci Kutu. İkinci kutunun teslim bilgisinde tek isim görünür: Lena Cross.",
+      "endingId": "secret_three_lines",
+      "effects": {
+        "dosya_02_unlocked": true
+      }
+    }
   ]
 }
