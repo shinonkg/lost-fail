@@ -1,0 +1,32 @@
+{
+  "id": "dosya_01",
+  "title": "Kırık Saat",
+  "caseNumber": "Dosya 01",
+  "subtitle": "Saat 02:17'de durdu.",
+  "version": 1,
+  "free": true,
+  "downloaded": true,
+  "cover": "assets/episodes/dosya_01/cover.webp",
+  "story": "data/episodes/dosya_01/story.json",
+  "missingPerson": {
+    "name": "Nisa Karahan",
+    "age": 24,
+    "lastSeen": "Kuzey Terminali Belediye Arşivi",
+    "criticalTime": "02:17"
+  },
+  "evidenceCatalog": [
+    {"id": "d_kirik_saat", "title": "Kırık kol saati", "description": "Nisa'nın dolabında bulundu. Saat 02:17'de durmuş."},
+    {"id": "d_gizli_kapi", "title": "Gizli yangın kapısı", "description": "Bodrum planlarında sisteme işlenmemiş eski bir geçit."},
+    {"id": "d_sahte_ifade", "title": "Sahte ifade ihtimali", "description": "Nisa, kendi adına yalan söylenebileceğini önceden sezmiş."},
+    {"id": "d_otobus_bileti", "title": "Otobüs bileti", "description": "Kuzey Terminali -> Eski Depo, 02:04, koltuk 6."},
+    {"id": "d_kamera_kesintisi", "title": "Kamera kesintisi", "description": "Kamera 02:16'da manuel bakım moduna alınmış."},
+    {"id": "d_sari_etiket", "title": "Sarı etiketli zarf", "description": "Nisa'nın elindeki zarfta No:6 yazıyor."},
+    {"id": "d_ses_kaydi", "title": "Ses kaydı", "description": "Yaşlı bir adam, kapı ve üç çizgi hakkında Nisa'yı uyarmış."},
+    {"id": "d_rauf", "title": "Rauf Yıldırım", "description": "Eski bina görevlisi. 17B ve kayıt dışı odaları biliyor."},
+    {"id": "d_emre", "title": "Emre Tunç", "description": "Kamera bakım modunda görünen E.TUNC hesabının sahibi."},
+    {"id": "d_sari_kutu", "title": "Sarı kutu sistemi", "description": "Resmi sisteme girmeyen evrak taşıma düzeni."},
+    {"id": "d_17b", "title": "Bodrum 17B", "description": "Boş kutu alanı, kırık cam ve Nisa'nın notu."},
+    {"id": "d_usb", "title": "USB bellek", "description": "Silinmiş kayıtlar ve sahte teslim listeleri içeriyor."},
+    {"id": "d_uc_cizgi", "title": "Üç çizgi sembolü", "description": "2019, 2021, 2024 ve 2026 dosyalarında tekrar eden işaret."}
+  ]
+}
