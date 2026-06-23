@@ -7,6 +7,7 @@ class StoryEngine {
           playerVariables: Map<String, dynamic>.from(state.playerVariables),
           foundEvidence: Set<String>.from(state.foundEvidence),
           completedEndings: Set<String>.from(state.completedEndings),
+          completedEpisodes: Set<String>.from(state.completedEpisodes),
         );
 
   final StoryPackage story;
@@ -35,6 +36,7 @@ class StoryEngine {
     _applyEffects(node.effects);
     if (node.isEnding && node.endingId != null) {
       state.completedEndings.add(node.endingId!);
+      state.completedEpisodes.add(episodeId);
     }
     state = state.copyWith(
       currentEpisodeId: episodeId,
@@ -42,6 +44,7 @@ class StoryEngine {
       playerVariables: state.playerVariables,
       foundEvidence: state.foundEvidence,
       completedEndings: state.completedEndings,
+      completedEpisodes: state.completedEpisodes,
     );
     return state;
   }
