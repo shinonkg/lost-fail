@@ -40,7 +40,10 @@ class EpisodeIntroScreen extends StatelessWidget {
                   ),
                 ),
               const SizedBox(height: 16),
-              Text('${manifest.caseNumber}: ${manifest.title}', style: Theme.of(context).textTheme.headlineSmall),
+              Text(
+                '${manifest.caseNumber}: ${manifest.title}',
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
               const SizedBox(height: 6),
               Text(manifest.subtitle),
               const SizedBox(height: 16),
@@ -48,7 +51,7 @@ class EpisodeIntroScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    _InfoLine(label: 'Kayıp kişi', value: manifest.missingPerson.name),
+                    _InfoLine(label: manifest.subjectLabel, value: manifest.missingPerson.name),
                     _InfoLine(label: 'Yaş', value: '${manifest.missingPerson.age}'),
                     _InfoLine(label: 'Son görülme', value: manifest.missingPerson.lastSeen),
                     _InfoLine(label: 'Kritik saat', value: manifest.missingPerson.criticalTime),
@@ -60,7 +63,9 @@ class EpisodeIntroScreen extends StatelessWidget {
                 label: 'Dosyayı Aç',
                 icon: Icons.folder_open,
                 onPressed: () {
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => StoryScreen(episode: episode)));
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (_) => StoryScreen(episode: episode)),
+                  );
                 },
               ),
             ],
@@ -84,7 +89,10 @@ class _InfoLine extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(width: 96, child: Text(label, style: const TextStyle(color: Color(0xffc8b99c)))),
+          SizedBox(
+            width: 96,
+            child: Text(label, style: const TextStyle(color: Color(0xffc8b99c))),
+          ),
           Expanded(child: Text(value)),
         ],
       ),
